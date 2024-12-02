@@ -5,7 +5,7 @@ import math
 # Representasi peta: 2 = Start, 3 = Goal, 1 = Obstacle, 0 = Free space
 map_grid = np.array([
     [2, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 3]
@@ -120,3 +120,5 @@ if path:
     print(result_grid)
 else:
     print("No path found.")
+
+end = input("tutup")

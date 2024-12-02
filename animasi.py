@@ -26,10 +26,10 @@ CYAN = (0, 255, 255)
 # Representasi peta: 2 = Start, 3 = Goal, 1 = Obstacle, 0 = Free space
 map_grid = np.array([
     [2, 0, 0, 0, 0],
-    [0, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0],
     [0, 1, 1, 1, 0],
-    [0, 1, 1, 3, 0],
-    [0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 3]
 ])
 
 # Fungsi untuk menghitung jarak Euclidean
@@ -98,7 +98,7 @@ def a_star_search(grid, draw_func, delay=0.2):
 def draw_grid(screen, grid, open_nodes, close_nodes, path_nodes):
     for row in range(ROWS):
         for col in range(COLS):
-            x, y = col * TILE_WIDTH, row * TILE_HEIGHT
+            x, y = col * TILE_WIDTH, row * TILE_HEIGHT  # Kolom (x), Baris (y)
             value = grid[row, col]
             if value == 1:  # Obstacle
                 pygame.draw.rect(screen, BLACK, (x, y, TILE_WIDTH, TILE_HEIGHT))
